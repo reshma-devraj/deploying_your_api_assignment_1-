@@ -1,8 +1,10 @@
+require('dotenv').config(); // Load environment variables
+
 const express = require('express');
 const { resolve } = require('path');
 
 const app = express();
-const port = 3010;
+const port = process.env.PORT || 3010; // Use PORT from .env, fallback to 3010
 
 app.use(express.static('static'));
 
